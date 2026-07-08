@@ -56,8 +56,8 @@ function ProfileImage({ className = "" }: { className?: string }) {
 
   return (
     <img
-      src="/assets/me/profile.jpg"
-      alt="Vaibhav"
+      src="/assets/me/profile.png"
+      alt="shubham"
       className={className}
       onError={() => setHasError(true)}
     />
@@ -208,7 +208,7 @@ export default function App() {
         return msgs;
       });
 
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const apiUrl = (import.meta.env.VITE_API_URL || 'https://backend-wheat-pi-55.vercel.app').replace(/\/$/, '');
       const responsePromise = fetch(`${apiUrl}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
